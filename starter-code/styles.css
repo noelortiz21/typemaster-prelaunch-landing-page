@@ -19,7 +19,6 @@
   4. Improve text rendering
 */
 body {
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 /*
@@ -73,158 +72,72 @@ h6 {
 /* styles */
 body {
   font-family: "Barlow", sans-serif;
-  font-style: 1rem;
-  font-weight:500;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.625rem;
   color: var(--mint);
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.root-wrapper {
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
-}
-
-.card{
-    text-align: center;
-}
-img {
-  object-fit: cover;
-}
-
-.picture {
-    margin-left: auto;
-    margin-right:auto;
-    display: grid; 
-    place-content: center;
-    background: hsla(22, 88%, 52%, 1);
-    border-radius: 16px;
-    width: 4.0625rem;
-    height: 4.0625rem;
-}
-
-.icon {
-    display: inline-block;
-  color: white;
-}
-.keeb-wrapper{
-    height: 19rem;
-    width: 100%;
-    background: white;
-    margin-left: 1.5rem;
-    grid-area: keyboard;
-}
-.keeb {
-    /* width: 45.42994rem;
-    height: 25.60381rem; */
-    overflow: hidden;
-  object-fit:  contain;
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
-}
-h1 {
-  font-size: 3rem;
-  line-height: 3rem;
-}
-h2 {
-  font-size: 2rem;
-  line-height: 2.25rem;
-  text-align: center;
-}
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-}
-h1,
-h2,
-h3 {
-    font-weight: 900;
-  text-transform: uppercase;
-  color: var(--dark-hvr);
-}
+h1 { font-size: 3rem; line-height: 3rem; }
+h2 { font-size: 2rem; line-height: 2.25rem; text-align: center; }
+h3 { font-size: 1.5rem; line-height: 1.75rem; }
+h1, h2, h3 { font-weight: 900; text-transform: uppercase; color: var(--dark-hvr); }
 
 .grid-container {
-  display: grid;
-  grid-template-rows: auto repeat(9, auto);
-  grid-template-areas: 
-  'header'
-  'header-content'
-  'keyboard'
-  'phoneandglass'
-  'middle-content'
-  'feature-compatible'
-  'feature-bluetooth'
-  'feature-battery'
-  'feature-rgb'
-  'footer'
-  ;
-
-}
-.logo{ grid-area: header;
-}
-.header-card{
-      grid-area: header-content;
-      margin-block:4rem;
-        display: grid;
-        gap: 2rem;
-}
-.button-dark-wrapper{
-    display: flex;
-}
-.release-date{
-    margin-left:auto;
-    align-self: center;
-    /* justify-self: end; */
-}
-.keeb-phone-and-glass-wrapper{
-    grid-area: phoneandglass;
-    display: flex;
-    margin-bottom: 4.69rem;
-    gap: 1.19rem;
-
-    
-}
-.keeb-and-phone-wrapper{
-  margin-left: -3rem;
-/* height: 50%;
-   width: 100%; */
-   /* align-self: center; */
-}
-
-
-.keeb-and-phone,
-.keeb-and-glass {
-  border-radius: 1.5rem;
-}
-.middle-content-card{
-    grid-area: middle-content;
-    margin-bottom: 6.94rem;
     display: grid;
-    gap: 1.5rem;
-    text-align: center;
-}
-.card{
-    display: grid;
-    gap:2rem;
-    text-align: center;
-}
-.card-one{
-    grid-area: feature-compatible;
-}
-.card-two{
-    grid-area: feature-bluetooth;
-}
-.card-three{
-    grid-area: feature-battery;
-}
-.card-four{
-    grid-area: feature-rgb;
-}
-.card:not(:last-of-type){
+    grid-template-rows: auto auto 1fr repeat(7, auto);
+    grid-template-areas:
+      "header"
+      "header-content"
+      "keyboard"
+      "phoneandglass"
+      "middle-content"
+      "feature-compatible"
+      "feature-bluetooth"
+      "feature-battery"
+      "feature-rgb"
+      "footer"; }
 
-    margin-bottom: 4rem;
-}
-.card:last-of-type{
-    margin-bottom: 6rem;
-}
+.root-wrapper { padding: 1.5rem 1.5rem 3rem 1.5rem; }
+/* -------------------------- */
+.logo { grid-area: header; }
+.button-light { background: var(--lightgrey-atv); color: var(--dark-hvr); grid-area: header; margin-left: auto; }
+/* -------------------------- */
+.header-card { grid-area: header-content; margin-block: 4rem; display: grid; gap: 2rem; }
+.button-dark-wrapper { display: flex; }
+.release-date { margin-left: auto; align-self: center;font-size: 1rem; line-height: 1.625rem; color: var(--mint); text-transform: 
+uppercase; font-weight: 700; }
+.button-dark { background: var(--darkorange-atv); color: white; }
+/* -------------------------- */
+.keeb-wrapper { background: white; grid-area: keyboard; margin-bottom: 1.19rem;  }
+.keeb { border-top-left-radius: 1.5rem; border-bottom-left-radius: 1.5rem; width: 100%; }
+/* -------------------------- */
+.keeb-phone-and-glass-wrapper { grid-area: phoneandglass; display: flex; margin-bottom: 4.69rem; gap: 1.19rem; }
+.keeb-and-phone-wrapper { margin-left: -3rem; } 
+.keeb-and-phone, .keeb-and-glass { border-radius: 1.5rem; }
+/* -------------------------- */
+.middle-content-card { grid-area: middle-content; margin-bottom: 6.94rem; display: grid; gap: 1.5rem; text-align: center; }
+/* -------------------------- */
+.card { display: grid; gap: 2rem; text-align: center; }
+.card:not(:last-of-type) { margin-bottom: 4rem; }
+.card.card-four { margin-bottom: 6rem; }
+.icon { display: inline-block; color: white; }
+
+.card-one { grid-area: feature-compatible; }
+/* -------------------------- */
+.card-two { grid-area: feature-bluetooth; }
+/* -------------------------- */
+.card-three { grid-area: feature-battery; }
+/* -------------------------- */
+.card-four { grid-area: feature-rgb; }
+ /* -------------------------- */
+footer { text-align: center; grid-area: footer; }
+/* -------------------------- */
+.card { text-align: center; }
+img { object-fit: cover; }
+/* pic class targets icons - centers them */
+.picture { margin-left: auto; margin-right: auto; display: grid; place-content: center; background: hsla(22, 88%, 52%, 1); border-radius: 16px; width: 4.0625rem; height: 4.0625rem; } 
 .button {
   display: inline-block;
   width: 10.5rem;
@@ -235,28 +148,78 @@ h3 {
   line-height: 1.625rem;
   text-transform: uppercase;
   font-size: 1rem;
-  text-align:center;
-  padding: .69rem .88rem;
-}
+  text-align: center;
+  padding: 0.69rem 0.88rem;}
 
-.release-date {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  color: var(--mint);
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.button-light {
-  background: var(--lightgrey-atv);
-  color: var(--dark-hvr);
-  grid-area:header;
-  margin-left:auto;
-}
-.button-dark {
-  background: var(--darkorange-atv);
-  color: white;
-}
-footer{
-    text-align:center;
+
+@media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      "header header"
+      "header-content header-img"
+      "phone phone"
+      "middle-content middle-content"
+      "feature-compatible feature-bluetooth"
+      "feature-battery feature-rgb"
+      "footer footer";
+  }
+  .root-wrapper { padding: 2.5rem 2.5rem 2.69rem 2.44rem; }
+
+  .logo{ grid-area: header; margin-bottom: 4rem; }
+  .button-light { grid-area: header ; }
+  .header-card { grid-area: header-content ; }
+  .header-card > h1 { margin-bottom: 2.12rem; }
+    .header-card > p { margin-bottom: 2.44rem; }
+  .keeb-wrapper { grid-area: header-img ; }
+  .keeb-phone-and-glass-wrapper { grid-area: phone; } 
+  .keeb-wrapper{ display: grid; place-content: center; }
+ .keeb{ object-fit:  cover; width: 100%; margin-left: 2.5rem; }
+
+    .middle-content-card {
+    grid-area: middle-content;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "title paragraph";
+    align-content: center;
+    margin: revert;
+    gap: 2.25rem;
+  }
+  .middle-content-card > h2 { grid-area: title; text-align: left; width: 15.9375rem; }
+  .middle-content-description{
+    grid-area: paragraph;
+    text-align: left;
+    margin-left: auto;
+    align-self: center;
+    justify-self: end;
+    width: 24.875rem;
+  }
+  .card > h3 { margin-top: 2.5rem; }
+  .card{ text-align: left; gap: 0; gap: 1.5rem;}
+  .picture{ margin-right: revert; margin-left: revert; }
+  .card.card-one , .card.card-two ,
+    .card.card-three , .card.card-four {
+        width: 18.125rem;
+    }   
+    .card.card-four:last-of-type{ margin-bottom: revert; }
+  .card-one { grid-area: feature-compatible; }
+  .card-two { grid-area: feature-bluetooth; }
+  .card-three { grid-area: feature-battery; }
+  .card-one , .card-three { margin-right: 4.41rem;  }
+.card:not(:last-of-type) { margin-bottom: revert; }
+.card.card-one,
+.card.card-two{ margin-bottom: 4rem; margin-top: 8.88rem;}
+  
+  .card-four { grid-area: feature-rgb; }
+    footer {
     grid-area: footer;
+    margin-top: 8.88rem;
+  }
+}
+@media (min-width: 1024px) {
+  /* Styles for desktop screens */
+  /* ... */
 }
