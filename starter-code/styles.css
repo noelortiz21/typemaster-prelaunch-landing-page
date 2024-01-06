@@ -85,6 +85,7 @@ h3 { font-size: 1.5rem; line-height: 1.75rem; }
 h1, h2, h3 { font-weight: 900; text-transform: uppercase; color: var(--dark-hvr); }
 
 .grid-container {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
     display: grid;
     grid-template-rows: auto auto 1fr repeat(7, auto);
     grid-template-areas:
@@ -99,7 +100,7 @@ h1, h2, h3 { font-weight: 900; text-transform: uppercase; color: var(--dark-hvr)
       "feature-rgb"
       "footer"; }
 
-.root-wrapper { padding: 1.5rem 1.5rem 3rem 1.5rem; }
+
 /* -------------------------- */
 .logo { grid-area: header; }
 .button-light { background: var(--lightgrey-atv); color: var(--dark-hvr); grid-area: header; margin-left: auto; }
@@ -154,6 +155,7 @@ img { object-fit: cover; }
 
 @media (min-width: 768px) {
     .grid-container {
+        padding: 2.5rem 2.5rem 2.69rem 2.44rem;
         display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(7, auto);
@@ -166,7 +168,6 @@ img { object-fit: cover; }
       "feature-battery feature-rgb"
       "footer footer";
   }
-  .root-wrapper { padding: 2.5rem 2.5rem 2.69rem 2.44rem; }
 
   .logo{ grid-area: header; margin-bottom: 4rem; }
   .button-light { grid-area: header ; }
@@ -198,28 +199,89 @@ img { object-fit: cover; }
     width: 24.875rem;
   }
   .card > h3 { margin-top: 2.5rem; }
-  .card{ text-align: left; gap: 0; gap: 1.5rem;}
+  .card{ text-align: left;  gap: 1.5rem;}
   .picture{ margin-right: revert; margin-left: revert; }
   .card.card-one , .card.card-two ,
     .card.card-three , .card.card-four {
         width: 18.125rem;
     }   
     .card.card-four:last-of-type{ margin-bottom: revert; }
+
   .card-one { grid-area: feature-compatible; }
-  .card-two { grid-area: feature-bluetooth; }
-  .card-three { grid-area: feature-battery; }
+   .card-two { grid-area: feature-bluetooth; } 
+   .card-three { grid-area: feature-battery; } 
+   .card-four { grid-area: feature-rgb; }
+
   .card-one , .card-three { margin-right: 4.41rem;  }
 .card:not(:last-of-type) { margin-bottom: revert; }
 .card.card-one,
-.card.card-two{ margin-bottom: 4rem; margin-top: 8.88rem;}
-  
-  .card-four { grid-area: feature-rgb; }
-    footer {
-    grid-area: footer;
-    margin-top: 8.88rem;
+.card.card-two{ margin-bottom: 4rem; margin-top: 8.88rem;} 
+    footer { grid-area: footer; margin-top: 8.88rem;
   }
 }
-@media (min-width: 1024px) {
-  /* Styles for desktop screens */
-  /* ... */
+@media (min-width: 1440px) {
+    .grid-container {
+  padding: 3.44rem 10.31rem 2.44rem 10.31rem;  
+        display: grid;
+    grid-template-columns: repeat(4,minmax(15.9375rem,1fr)) ;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "header header header header"
+      "header-content header-content header-img header-img"
+      "phone-and-glass phone-and-glass phone-and-glass middle-content"
+      "feature-compatible feature-bluetooth feature-battery feature-rgb"
+      "footer footer footer footer";
+  }
+  .logo{ grid-area: header; margin-bottom: 4rem; }
+  .button-light { grid-area: header ; }
+  /* .header-card > h1 { margin-bottom: 2.12rem; }
+    .header-card > p { margin-bottom: 2.44rem; } */
+    /* --------------header card and img------------------------ */
+  .header-card { grid-area: header-content ;}
+
+  .keeb-wrapper { grid-area: header-img ; margin-right: revert; }
+ .keeb{ object-fit: cover; width: revert; margin-left: revert; }
+ /* -------------phone and glass middle content------------------------ */
+  .keeb-phone-and-glass-wrapper { margin-left: revert; ;grid-area: phone-and-glass; margin-bottom: revert;} 
+  .keeb-and-glass,
+  .keeb-and-phone{max-width: 100%;}
+.card-three br {
+  display: none;
+}
+  /* .keeb-wrapper{ display: grid; place-content: center; } */
+/* .keeb-and-phone{width: 15.9375rem;}
+  .keeb-and-glass{width: 25.5rem;} */
+  .middle-content-card > h2 { width: revert; margin: revert;}
+  .middle-content-description{
+      width: revert;
+      gap: revert;
+      
+    }
+    .middle-content-card {
+    width: revert;
+    grid-area:middle-content;
+    display: revert;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: revert;
+    /* padding-inline: 4.41rem ; */
+  } 
+    /* ---------------------card section---------------------- */
+  .card{gap: revert; margin-top: 8.19rem;}
+  .card-one { grid-area: feature-compatible; } .card-two { grid-area: feature-bluetooth; } .card-three { grid-area: feature-battery; } .card-four { grid-area: feature-rgb; } 
+  .card-one , .card-three { margin-right: initial;  }
+.card:not(:last-of-type) { margin-bottom: initial; }
+.card.card-one,
+.card.card-two{ margin-bottom: initial; margin-top: 8.19rem;} 
+footer { grid-area: footer; margin-top: 8rem;}
+.card > h3{font-size: 1.5rem;}
+.card.card-one,
+.card.card-two,
+.card.card-three,
+.card.card-four{
+    width: revert; 
+    width: 15.9375rem;
+
+}
 }

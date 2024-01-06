@@ -20,7 +20,7 @@
     <title>Frontend Mentor | Typemaster pre-launch landing page</title>
   </head>
   <body>
-    <div class="root-wrapper">
+    <!-- <div class="root-wrapper"> -->
       <div class="grid-container">
         <img class="logo" src="./assets/shared/logo.svg" alt="logo" />
         <button class="button button-light">Pre-order now</button>
@@ -38,6 +38,7 @@
         <picture class="keeb-wrapper">
           <source media="(max-width: 768px)" srcset="./assets/mobile/image-glass-and-keyboard.jpg">
     <source media="(min-width: 769px)" srcset="./assets/tablet/image-glass-and-keyboard.jpg">
+    <source media="(min-width: 1024px)" srcset="./assets/desktop/image-keyboard.jpg">
           <img
             class="keeb"
             src="./assets/mobile/image-keyboard.jpg"
@@ -46,6 +47,8 @@
         </picture>
         <div class="keeb-phone-and-glass-wrapper">
           <picture class="keeb-and-phone-wrapper">
+    <source media="(min-width: 768px)" srcset="./assets/tablet/image-phone-and-keyboard.jpg">
+    <source media="(min-width: 1024px)" srcset="./assets/desktop/image-phone-and-keyboard.jpg">
             <img
               class="keeb-and-phone"
               src="./assets/mobile/image-phone-and-keyboard.jpg"
@@ -53,6 +56,8 @@
             />
           </picture>
           <picture class="keeb-and-glass-wrapper">
+    <source media="(min-width: 768px)" srcset="./assets/tablet/image-glass-and-keyboard.jpg">
+    <source media="(min-width: 1024px)" srcset="./assets/desktop/image-glass-and-keyboard.jpg">
             <img
               class="keeb-and-glass"
               src="./assets/mobile/image-glass-and-keyboard.jpg"
@@ -138,6 +143,6 @@
           <p>Typemaster 2021 | All Rights Reserved</p>
         </footer>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
 </html>
