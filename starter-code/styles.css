@@ -237,34 +237,43 @@ img { object-fit: cover; }
   /* .header-card > h1 { margin-bottom: 2.12rem; }
     .header-card > p { margin-bottom: 2.44rem; } */
     /* --------------header card and img------------------------ */
-  .header-card { grid-area: header-content ;}
-
+  .header-card { grid-area: header-content;width: 27.8125rem;gap:revert;}
+.header-card > h1{margin-bottom: 1.5rem;}
+.header-card> p{margin-bottom: 1.5rem;}
   .keeb-wrapper { grid-area: header-img ; margin-right: revert; }
- .keeb{ object-fit: cover; width: revert; margin-left: revert; }
+ .keeb{ object-fit: cover; width: revert; margin-left: revert; border-radius:1.5rem;}
  /* -------------phone and glass middle content------------------------ */
-  .keeb-phone-and-glass-wrapper { margin-left: revert; ;grid-area: phone-and-glass; margin-bottom: revert;} 
+  .keeb-phone-and-glass-wrapper { 
+    margin-left: revert; 
+    grid-area: phone-and-glass;
+    margin-bottom: revert;
+    display: flex;} 
+    
   .keeb-and-glass,
   .keeb-and-phone{max-width: 100%;}
+  .keeb-and-glass{flex: 1;}
+  .keeb-and-phone{flex:2;}
+  
 .card-three br {
   display: none;
 }
   /* .keeb-wrapper{ display: grid; place-content: center; } */
 /* .keeb-and-phone{width: 15.9375rem;}
   .keeb-and-glass{width: 25.5rem;} */
-  .middle-content-card > h2 { width: revert; margin: revert;}
+  .middle-content-card > h2 { width: revert; margin: revert; }
   .middle-content-description{
       width: revert;
       gap: revert;
       
     }
     .middle-content-card {
-    width: revert;
+    width: 15.9375rem;
     grid-area:middle-content;
     display: revert;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: revert;
+    margin-left: 4.41rem;
     /* padding-inline: 4.41rem ; */
   } 
     /* ---------------------card section---------------------- */
